@@ -4,9 +4,17 @@ It will include mycontact info that you can choose to hide or show on the main p
 "use client";
 import React, { useState } from "react";
 
+type ToggleKey = "name" | "email" | "phone"
 
-export default function BtnClick() {
-    const [showPanel, setShowPanel] = useState(false);
+export default function ContactToggles() {
+    const [open, setOpen] = useState<Record<ToggleKey, boolean>>({
+        name: false,
+        email: false,
+        phone: false,
+    });
+
+    const toggle = (key: ToggleKey) =>
+        setOpen((prev) => ({ ...prev, [key] : !prev[key] }));
 
 
     return (
@@ -18,7 +26,7 @@ export default function BtnClick() {
             <button
             type="button"
             className="btn"
-            onClick={() => ToggleEvent("name")}
+            onClick={() => toggle("name")}
             aria-expanded={open.name}
             aria-controls="panel-name"
             id="btn-name"
@@ -36,8 +44,6 @@ export default function BtnClick() {
         >
             <p>Princess Krish Anne Bernardino</p>
         </div>
-
-        /*Email btn*/
 
         <div className="row">
             <div className="label">Email</div>
