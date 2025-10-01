@@ -86,11 +86,11 @@ export default function BtnClick() {
         >
             <p>(905) 462-2483</p>
         </div>
-    
+
             <style jsx>{`
-                .email-card { background: #0f172a0d; border: 1px solid #e5e7eb; padding: 16px; border-radius: 14px; margin: 16px 0; }
-                .email-btn { padding: 8px 14px; border-radius: 10px; border: 1px solid #d1d5db; background: #738597ff; cursor: pointer; font-weight: 600; }
-                .email-btn:hover { filter: brightness(0.97); }
+                .card { background: #0f172a0d; border: 1px solid #e5e7eb; padding: 16px; border-radius: 14px; margin: 16px 0; }
+                .btn { padding: 8px 14px; border-radius: 10px; border: 1px solid #d1d5db; background: #738597ff; cursor: pointer; font-weight: 600; }
+                .btn:hover { filter: brightness(0.97); }
                 .panel { margin-top: 10px; background: #395072ff; border: 1px dashed #df7edfff; padding: 10px; border-radius: 10px; }
             `}</style>
         </section>
