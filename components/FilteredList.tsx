@@ -13,7 +13,7 @@ export default function FilterList() {
       { id: 3, label: "Algorithms and Problem Solving", active: true },
       { id: 4, label: "Next.js and React", active: false },
       { id: 5, label: "Object-Oriented Programming", active: false },
-      { id: 5, label: "Fundamentals of Numeric Computation", active: false },
+      { id: 6, label: "Fundamentals of Numeric Computation", active: false },
     ],
     []
   );
