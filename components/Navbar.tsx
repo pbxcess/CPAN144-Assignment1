@@ -9,8 +9,8 @@ export default function Navbar() {
                 <Link href="/contact">Contact Me</Link>
             </nav>
             <style jsx>{`
-            .nav { border-bottom: 1px solid #c2aee7ff; background:#fafafa;  }
-            .nav-inner ( display: flex space-between; justify-content: space-between; padding: 12px 16px; max-width: 920px; margin:0 auto; }
+            .nav { border-bottom: 1px solid #c2aee7ff; background:#c2aee7ff;  }
+            .nav-inner { display: flex; justify-content: space-between; padding: 12px 16px; max-width: 920px; margin:0 auto; }
             .nav-inner a { padding: 6px 8px; border-radius: 8px }
             .nav-inner a:hover { background: #4f3480ff}
             `}
