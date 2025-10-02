@@ -6,11 +6,23 @@ import React, { useState } from "react";
 
 type ToggleKey = "name" | "email" | "phone"
 
-export default function ContactToggles() {
+type ContactInfoProps = {
+    name: string;
+    email: string;
+    phone: string;
+    defaultOpen? : Partial<Record<ToggleKey, boolean>>;
+}
+
+export default function ContactInfo({
+    name,
+    email,
+    phone,
+    defaultOpen,
+}: ContactInfoProps) {
     const [open, setOpen] = useState<Record<ToggleKey, boolean>>({
-        name: false,
-        email: false,
-        phone: false,
+        name: !!defaultOpen?.name,
+        email: !!defaultOpen?.email,
+        phone: !!defaultOpen?.phone,
     });
 
     const toggle = (key: ToggleKey) =>
@@ -18,9 +30,10 @@ export default function ContactToggles() {
 
 
     return (
-        <section className="card">
-        <h2>My Contact Info</h2>
+        <section className="card" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">My Contact Info</h2>
 
+        {/*NAME*/}
         <div className="row">
             <div className="label">Name</div>
             <button
@@ -45,6 +58,7 @@ export default function ContactToggles() {
             <p>Princess Krish Anne Bernardino</p>
         </div>
 
+        {/*EMAIL*/}
         <div className="row">
             <div className="label">Email</div>
             <button
@@ -69,6 +83,7 @@ export default function ContactToggles() {
             <p>pkabernardino@gmail.com</p>
         </div>
 
+        {/*PHONE#*/}
         <div className="row">
             <div className="label">Phone number</div>
             <button
