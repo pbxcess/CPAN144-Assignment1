@@ -1,16 +1,25 @@
 import React from "react";
 import ContactInfo from "../components/ContactInfo";
-import FilteredList from "../components/FilteredList";
+import FilteredList, { SkillItem } from "../components/FilteredList";
 import HoverCard from "../components/HoverCard";
 
 export default function Home() {
   return (
-    <main>
-      <ContactInfo />
+    <>
+      <h1>Welcome to my first React Project &nbsp;1</h1>
 
-      <FilteredList />
+      <ContactInfo
+        name="Princess Krish Anne Bernardino"
+        email="pkabernardino@gmail.com"
+        phone="(905) 462-2483"
+        defaultOpen = {{ name: true }}
+      />
 
-      <HoverCard />
-    </main>
+      <FilteredList items = {skills} />
+
+      <HoverCard 
+        caption="Hover to switch between my two cats!"
+      />
+    </>
   );
 }
