@@ -10,7 +10,7 @@ export default function Navbar() {
             </nav>
             <style jsx>{`
             .nav { border-bottom: 1px solid #c2aee7ff; background:#fafafa;  }
-            .nav-inner ( display: flex space-between; gap: 16px; padding: 12px 16px; max-width: 920px; margin:0 auto; }
+            .nav-inner ( display: flex space-between; justify-content: space-between; padding: 12px 16px; max-width: 920px; margin:0 auto; }
             .nav-inner a { padding: 6px 8px; border-radius: 8px }
             .nav-inner a:hover { background: #4f3480ff}
             `}
