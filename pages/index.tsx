@@ -12,6 +12,8 @@ export default function Home() {
       </section>
       <section>
         <HoverCard
+        imgA="/LuckyCute.jpg"
+        imgB="/soraSeal.jpg"
         caption="Hover to switch between my two cats!" />
       </section>
 
@@ -22,7 +24,7 @@ export default function Home() {
           padding: 24px;
           border: 1px solid #e5e7eb;
           border-radius: 14px;
-          background: #f9fafb;
+          background: #4f3480ff;
         }
         h1 { margin: 0; }
       `}</style>
