@@ -55,7 +55,7 @@ export default function ContactInfo({
         aria-labelledby="btn-name"
         hidden={!open.name}
         >
-            <p>Princess Krish Anne Bernardino</p>
+            <p>{name}</p>
         </div>
 
         {/*EMAIL*/}
@@ -80,7 +80,7 @@ export default function ContactInfo({
         aria-labelledby="btn-email"
         hidden={!open.email}
         >
-            <p>pkabernardino@gmail.com</p>
+            <p>{email}</p>
         </div>
 
         {/*PHONE#*/}
@@ -105,7 +105,7 @@ export default function ContactInfo({
         aria-labelledby="btn-phone"
         hidden={!open.phone}
         >
-            <p>(905) 462-2483</p>
+            <p>{phone}</p>
         </div>
 
             <style jsx>{`
