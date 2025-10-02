@@ -9,6 +9,8 @@ export default function Home() {
       <ContactInfo />
 
       <FilteredList />
+
+      <HoverCard />
     </main>
   );
 }
