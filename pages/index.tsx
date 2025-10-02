@@ -12,6 +12,8 @@ export default function Home() {
       </section>
       <section>
         <HoverCard
+        imgA="/LuckyCute.jpg"
+        imgB="/soraSeal.jpg"
         caption="Hover to switch between my two cats!" />
       </section>
 
