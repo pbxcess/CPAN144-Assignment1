@@ -3,11 +3,16 @@
 "use client";
 import React, { useMemo, useState } from "react";
 
-type Item = { id: number; label: string; active: boolean };
+export type SkillItem = { id: number; label: string; active: boolean };
 
-export default function FilterList() {
-  const items: Item[] = useMemo(
-    () => [
+type FilterListProps = {
+  items?: SkillItem[];
+};
+
+export default function FilterList({items: incoming }: FilterListProps) {
+  const items = useMemo<SkillItem[]> (
+    () =>
+      incoming ?? [
       { id: 1, label: "Intro to JavaScript", active: true },
       { id: 2, label: "Intro to Web Development", active: true },
       { id: 3, label: "Algorithms and Problem Solving", active: true },
@@ -15,7 +20,7 @@ export default function FilterList() {
       { id: 5, label: "Object-Oriented Programming", active: false },
       { id: 6, label: "Fundamentals of Numeric Computation", active: false },
     ],
-    []
+    [incoming]
   );
 
   const [showActive, setShowActive] = useState(true);
@@ -24,33 +29,39 @@ export default function FilterList() {
   return (
     <section className="card">
       <h2>Current Computer Programming Skills Learned</h2>
-      <div className="row">
+
+      <div className="row" role="group" aria-label="Skill filter">
         <button
           className={`btn ${showActive ? "btn-primary" : ""}`}
           onClick={() => setShowActive(true)}
           aria-pressed={showActive}
         >
-          Show Learned
+          Show Learned ({items.filter(i => i.active).length})
         </button>
         <button
           className={`btn ${!showActive ? "btn-primary" : ""}`}
           onClick={() => setShowActive(false)}
           aria-pressed={!showActive}
         >
-          Show Learning
+          Show Learning ({items.filter(i => !i.active).length})
         </button>
       </div>
 
-      <ul className="list">
-        {filtered.map((it) => (
-          <li key={it.id} className="list-item">
-            <span className={`badge ${it.active ? "on" : "off"}`}>
-              {it.active ? "Active" : "Inactive"}
-            </span>
-            {it.label}
-          </li>
-        ))}
-      </ul>
+      {filtered.length === 0 ? (
+        <p className="hint">No items to display for this filter.</p>
+      ) : (
+        <ul className="list">
+          {filtered.map((it) => (
+            <li key={it.id} className="list-item">
+              <span className={`badge ${it.active ? "on" : "off"}`}>
+                {it.active ? "Active" : "Inactive"}
+              </span>
+              {it.label}
+            </li>
+          ))}
+        </ul>
+      )}
+
 
       <style jsx>{`
         .card {
